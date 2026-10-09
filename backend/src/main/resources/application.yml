@@ -1,0 +1,28 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api/v1
+
+spring:
+  application:
+    name: fintech-backend
+  profiles:
+    active: dev
+
+cors:
+  allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:5173}
+
+firebase:
+  service-account-path: ${FIREBASE_KEY_PATH:firebase-key.json}
+
+razorpay:
+  key-id: ${RAZORPAY_KEY_ID:rzp_test_dummyKeyId}
+  key-secret: ${RAZORPAY_KEY_SECRET:dummySecret}
+  webhook-secret: ${RAZORPAY_WEBHOOK_SECRET:dummyWebhookSecret}
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operationsSorter: method
