@@ -313,7 +313,11 @@ public class PaymentService {
             JSONObject orderRequest = new JSONObject();
             orderRequest.put("amount", amountPaise); // Amount in paise
             orderRequest.put("currency", currency);
-            orderRequest.put("receipt", docId);
+            String receipt = docId;
+            if (receipt.length() > 40) {
+                receipt = "rcpt_" + Math.abs(docId.hashCode()) + "_" + (System.currentTimeMillis() % 100000);
+            }
+            orderRequest.put("receipt", receipt);
             orderRequest.put("payment_capture", 1);
 
             Order order = razorpayClient.orders.create(orderRequest);
