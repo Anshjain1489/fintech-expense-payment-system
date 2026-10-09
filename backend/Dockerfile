@@ -6,8 +6,8 @@ RUN mvn dependency:go-offline -B
 COPY src ./src
 RUN mvn clean package -DskipTests
 
-# Stage 2: Runtime stage
-FROM eclipse-temurin:17-jre-alpine
+# Stage 2: Runtime stage (Use Debian glibc image for gRPC/Netty tcnative compatibility)
+FROM eclipse-temurin:17-jre
 WORKDIR /app
 COPY --from=build /app/target/fintech-backend-1.0.0.jar app.jar
 
