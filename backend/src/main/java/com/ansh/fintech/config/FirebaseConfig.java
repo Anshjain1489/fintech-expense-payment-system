@@ -48,9 +48,9 @@ public class FirebaseConfig {
             try {
                 optionsBuilder.setCredentials(GoogleCredentials.getApplicationDefault());
             } catch (Exception e) {
-                log.warn("Could not load Application Default Credentials. Using unauthenticated credentials for mock/test environment.");
+                log.warn("Could not load Application Default Credentials. Using unauthenticated credentials with project ID fintech-app-a8517.");
                 optionsBuilder.setCredentials(GoogleCredentials.newBuilder().build());
-                optionsBuilder.setProjectId("demo-fintech-project");
+                optionsBuilder.setProjectId("fintech-app-a8517");
             }
         }
 
