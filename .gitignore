@@ -1,0 +1,36 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Dependencies
+node_modules/
+target/
+build/
+
+# Environment and Secrets
+.env
+.env.*
+!.env.example
+**/secrets/
+*firebase-key*.json
+*service-account*.json
+serviceAccountKey.json
+*.pem
+start-backend-production.ps1
+
+# Build and Output
+dist/
+dist-ssr/
+*.egg-info/
+.bundle/
+*.log
+firebase-debug.log
+.firebase/
+.firebaserc.local
+
+# IDE & OS Files
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
